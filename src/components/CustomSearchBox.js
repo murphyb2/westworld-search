@@ -16,7 +16,13 @@ const SearchBox = ({
       onChange={(event) => refine(event.currentTarget.value)}
       placeholder={placeholder}
     />
-    <button onClick={() => refine("")} className="searchbox_button">
+    <button
+      onClick={(e) => {
+        e.preventDefault();
+        refine("");
+      }}
+      className="searchbox_button"
+    >
       <div
         style={{
           width: "75%",
