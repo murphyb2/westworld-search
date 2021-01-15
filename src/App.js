@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
+import { InstantSearch, SearchBox, Stats, Hits } from "react-instantsearch-dom";
 
 import EpisodeProvider from "./context/EpisodeContext";
 
@@ -32,7 +32,7 @@ const App = () => {
                     placeholder: "Search for a movie",
                   }}
                 />
-
+                <Stats />
                 <Hits hitComponent={Hit} />
               </InstantSearch>
             </div>
