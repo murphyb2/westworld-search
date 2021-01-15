@@ -1,39 +1,53 @@
-.App {
-  text-align: center;
+/* Color Vars */
+:root {
+  --red: #c03221;
+  --white: #ffffff;
+  --offWhite: #f7f7ff;
+  --sand: #f2d0a4;
+  --grey: #545e75;
+  --green: #3f826d;
+}
+html {
+  background-color: var(--offWhite);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: auto;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 90%;
+    margin: auto;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 66%;
+    margin: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 66%;
+    margin: auto;
   }
 }
 
@@ -219,4 +233,41 @@
 }
 .rheostat-tooltip {
   top: -22px;
+}
+
+/* Custom styles */
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--red);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: var(--red);
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: var(--red);
+}
+
+.searchbox {
+  display: flex;
+  flex-direction: row;
+  margin: 1rem 0;
+}
+
+.searchbox_input {
+  flex-grow: 1;
+  padding: 1rem;
+  font-size: large;
+  border: 1px solid;
+  border-radius: 6px 0 0 0;
+}
+.searchbox_button {
+  background-color: var(--red);
+  border: 1px solid;
+  border-left: none;
+  border-radius: 0 6px 0 0;
 }
