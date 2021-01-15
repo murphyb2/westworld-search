@@ -4,8 +4,12 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox, Hits } from "react-instantsearch-dom";
+
+import EpisodeProvider from "./context/EpisodeContext";
+
 import Hit from "./components/Hit";
 import EpisodeDetail from "./components/EpisodeDetail";
+import CustomSearchBox from "./components/CustomSearchBox";
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -14,29 +18,31 @@ const searchClient = algoliasearch(
 
 const App = () => {
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <div style={{ textAlign: "center" }}>
-            <InstantSearch
-              searchClient={searchClient}
-              indexName={process.env.REACT_APP_ALGOLIA_INDEX}
-            >
-              <SearchBox
-                translations={{
-                  placeholder: "Search for a movie",
-                }}
-                showLoadingIndicator
-              />
-              <Hits hitComponent={Hit} />
-            </InstantSearch>
-          </div>
-        </Route>
-        <Route path="/:objectID">
-          <EpisodeDetail />
-        </Route>
-      </Switch>
-    </Router>
+    <EpisodeProvider>
+      <Router>
+        <Switch>
+          <Route exact path="/">
+            <div>
+              <InstantSearch
+                searchClient={searchClient}
+                indexName={process.env.REACT_APP_ALGOLIA_INDEX}
+              >
+                <CustomSearchBox
+                  translations={{
+                    placeholder: "Search for a movie",
+                  }}
+                />
+
+                <Hits hitComponent={Hit} />
+              </InstantSearch>
+            </div>
+          </Route>
+          <Route path="/:objectID">
+            <EpisodeDetail />
+          </Route>
+        </Switch>
+      </Router>
+    </EpisodeProvider>
   );
 };
 
