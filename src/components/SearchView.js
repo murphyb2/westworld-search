@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch, SearchBox, Stats, Hits } from "react-instantsearch-dom";
 
 import Hit from "./Hit";
 import CustomSearchBox from "./CustomSearchBox";
+import CustomHits from "./CustomHits";
 
 const searchClient = algoliasearch(
   process.env.REACT_APP_ALGOLIA_APP_ID,
@@ -11,6 +12,8 @@ const searchClient = algoliasearch(
 );
 
 const SearchView = () => {
+  const [hitsPossible, setHitsPossible] = useState(false);
+
   return (
     <div className="container">
       <InstantSearch
@@ -18,12 +21,15 @@ const SearchView = () => {
         indexName={process.env.REACT_APP_ALGOLIA_INDEX}
       >
         <CustomSearchBox
-          //   translations={{
-          placeholder={"Search for a movie..."}
-          //   }}
+          placeholder={"Search for an episode..."}
+          handleInputChange={(keyword) => setHitsPossible(!!keyword)}
         />
-        <Stats />
-        <Hits hitComponent={Hit} />
+        {hitsPossible && <Stats />}
+        <CustomHits
+          hitComponent={Hit}
+          //   hitsPossible={hitsPossible}
+          hitsPossible={true}
+        />
       </InstantSearch>
     </div>
   );

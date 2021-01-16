@@ -10,41 +10,23 @@ const Hit = ({ hit }) => {
   const updateEpisode = useEpisodeUpdate();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-      }}
-    >
-      <Link to={`${hit.objectID}`}>
-        <img
-          src={hit.image.medium}
-          alt={hit.name}
-          onClick={() => updateEpisode(hit)}
-        />
-      </Link>
-      <div
-        style={{
-          width: "100%",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-          }}
-        >
-          <Highlight hit={hit} tagName="strong" attribute={"name"} />
-
+    <Link to={`${hit.objectID}`} onClick={() => updateEpisode(hit)}>
+      <div className="hit_container">
+        <img src={hit.image.medium} alt={hit.name} />
+        <div className="hit_content">
           <div>
-            S{hit.season}/E{hit.episode}
+            <h3>
+              <Highlight hit={hit} tagName="strong" attribute={"name"} />
+            </h3>
+            <p>
+              S{hit.season}/E{hit.episode}
+            </p>
           </div>
+          {/* summary field is a string with html tags */}
+          <div className="hit_body">{ReactHtmlParser(hit.summary)}</div>
         </div>
-        {/* summary field is a string with html tags */}
-        <div>{ReactHtmlParser(hit.summary)}</div>
       </div>
-    </div>
+    </Link>
   );
 };
 

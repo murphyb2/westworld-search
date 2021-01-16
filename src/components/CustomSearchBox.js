@@ -7,13 +7,17 @@ const SearchBox = ({
   isSearchStalled,
   refine,
   placeholder,
+  handleInputChange,
 }) => (
   <form noValidate action="" role="search" className="searchbox">
     <input
       className="searchbox_input"
       type="search"
       value={currentRefinement}
-      onChange={(event) => refine(event.currentTarget.value)}
+      onChange={(event) => {
+        handleInputChange(event.currentTarget.value);
+        refine(event.currentTarget.value);
+      }}
       placeholder={placeholder}
     />
     <button

@@ -7,6 +7,13 @@
   --grey: #545e75;
   --green: #3f826d;
 }
+
+a {
+  text-decoration: none;
+  text-emphasis: none;
+  color: inherit;
+}
+
 html {
   background-color: var(--offWhite);
 }
@@ -236,6 +243,8 @@ html {
 }
 
 /* Custom styles */
+
+/* Searchbox */
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: var(--red);
@@ -255,7 +264,7 @@ html {
 .searchbox {
   display: flex;
   flex-direction: row;
-  margin: 1rem 0;
+  margin: 1rem 0 0 0;
 }
 
 .searchbox_input {
@@ -270,4 +279,64 @@ html {
   border: 1px solid;
   border-left: none;
   border-radius: 0 6px 0 0;
+}
+
+/* Hits */
+.hits_container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  padding: 0.5rem;
+  border: 1px solid;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.hit_container {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white);
+  justify-content: space-between;
+  padding: 0.5rem;
+
+  img {
+    margin: auto;
+    max-width: 16%;
+  }
+}
+
+.hit_container:hover {
+  background-color: var(--sand);
+}
+
+.hit_content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: transparent;
+  padding: 0 0.5rem;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+    h3 {
+      margin: 0;
+      color: var(--red);
+    }
+
+    p {
+      margin: 0;
+      color: var(--grey);
+    }
+  }
+}
+
+.hit_body {
+  margin: 0;
+  p {
+    margin: 0;
+    padding: 0;
+    color: var(--grey);
+  }
 }
