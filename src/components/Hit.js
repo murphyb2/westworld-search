@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import { Highlight } from "react-instantsearch-dom";
-import ReactHtmlParser from "react-html-parser";
 
 import { useEpisodeUpdate } from "../context/EpisodeContext";
 
@@ -22,10 +21,8 @@ const Hit = ({ hit }) => {
               S{hit.season}/E{hit.episode}
             </p>
           </div>
-          {/* summary field is a string with html tags */}
           <div className="hit_body">
             <Highlight hit={hit} tagName="strong" attribute="summary" />
-            {ReactHtmlParser(hit.summary)}
           </div>
         </div>
       </div>

@@ -3,7 +3,6 @@ import {
   Redirect,
   // useParams
 } from "react-router-dom";
-import ReactHtmlParser from "react-html-parser";
 
 import { useEpisode } from "../context/EpisodeContext";
 
@@ -16,8 +15,7 @@ const EpisodeDetail = () => {
       <h1>{episode.name}</h1>
 
       <img src={episode.image.medium} alt="" />
-      {/* <div dangerouslySetInnerHTML={{ __html: episode.summary }}></div> */}
-      <div>{ReactHtmlParser(episode.summary)}</div>
+      <p>{episode.summary}</p>
     </div>
   ) : (
     <Redirect to="/" />

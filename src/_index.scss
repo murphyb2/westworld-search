@@ -13,7 +13,7 @@ body {
 $defaultSans: mr-eaves-modern, sans-serif;
 $defaultWeight: 400;
 
-* {
+html {
   font-family: $defaultSans;
   font-weight: $defaultWeight;
   font-style: normal;
