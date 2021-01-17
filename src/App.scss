@@ -1,3 +1,5 @@
+@import "./index.scss";
+
 /* Color Vars */
 :root {
   --red: #c03221;
@@ -97,20 +99,20 @@ button:focus {
   display: flex;
   flex-direction: row;
   margin: 0;
-  padding-top: 16vh;
+  padding-top: 8vh;
 }
 
 .searchbox_input {
   flex-grow: 1;
   padding: 1rem 3rem;
   font-size: large;
-  border: 1px solid;
+  border: none;
+  border-bottom: 1px solid var(--grey);
   border-radius: 25px 0 0 0;
 }
 .searchbox_button {
   background-color: var(--grey);
-  border: 1px solid;
-  border-left: none;
+  border: none;
   border-radius: 0 25px 0 0;
 }
 
@@ -120,9 +122,9 @@ button:focus {
   flex-direction: column;
   background-color: var(--white);
   padding: 0.5rem;
-  border: 1px solid;
-  border-top: none;
-  border-radius: 0 0 6px 6px;
+  margin-bottom: 2rem;
+  border: none;
+  border-radius: 0 0 25px 25px;
   max-height: 66vh;
   overflow-y: scroll;
 }
@@ -155,15 +157,21 @@ button:focus {
   div {
     display: flex;
     justify-content: space-between;
-    h3 {
-      margin: 0;
-      color: var(--red);
-    }
 
     p {
       margin: 0;
       color: var(--grey);
     }
+  }
+}
+
+.hit_content_title {
+  margin: 0;
+  font-weight: 700;
+  color: var(--green);
+  span .ais-Highlight-highlighted {
+    color: var(--red);
+    font-weight: 700;
   }
 }
 

@@ -10,9 +10,12 @@ body {
   margin: 0;
 }
 
+$defaultSans: mr-eaves-modern, sans-serif;
+$defaultWeight: 400;
+
 * {
-  font-family: mr-eaves-modern, sans-serif;
-  font-weight: 400;
+  font-family: $defaultSans;
+  font-weight: $defaultWeight;
   font-style: normal;
 }
 

@@ -15,7 +15,7 @@ const Hit = ({ hit }) => {
         <img src={hit.image.medium} alt={hit.name} />
         <div className="hit_content">
           <div>
-            <h3>
+            <h3 className="hit_content_title">
               <Highlight hit={hit} tagName="strong" attribute={"name"} />
             </h3>
             <p>
@@ -23,7 +23,10 @@ const Hit = ({ hit }) => {
             </p>
           </div>
           {/* summary field is a string with html tags */}
-          <div className="hit_body">{ReactHtmlParser(hit.summary)}</div>
+          <div className="hit_body">
+            <Highlight hit={hit} tagName="strong" attribute="summary" />
+            {ReactHtmlParser(hit.summary)}
+          </div>
         </div>
       </div>
     </Link>
