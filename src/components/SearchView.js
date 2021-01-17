@@ -24,12 +24,14 @@ const SearchView = () => {
           placeholder={"Search for an episode..."}
           handleInputChange={(keyword) => setHitsPossible(!!keyword)}
         />
-        {hitsPossible && <Stats />}
-        <CustomHits
-          hitComponent={Hit}
-          //   hitsPossible={hitsPossible}
-          hitsPossible={true}
-        />
+
+        {hitsPossible && (
+          <CustomHits
+            hitComponent={Hit}
+            hitsPossible={hitsPossible}
+            //   hitsPossible={true}
+          />
+        )}
       </InstantSearch>
     </div>
   );
