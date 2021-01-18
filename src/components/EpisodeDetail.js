@@ -17,17 +17,7 @@ const EpisodeDetail = () => {
       }}
     >
       <Link to="/">
-        <button
-          style={{
-            margin: "1rem 0",
-            padding: ".75rem",
-            border: "none",
-            borderRadius: "18px",
-            backgroundColor: "var(--green)",
-            color: "var(--white)",
-            fontSize: "x-large",
-          }}
-        >
+        <button className="link_button btn">
           <h5
             style={{
               margin: "0",
@@ -69,6 +59,7 @@ const EpisodeDetail = () => {
             justifyContent: "space-between",
             borderRadius: "12px",
           }}
+          className="btn"
         >
           <h2 style={{ margin: "auto 0", paddingRight: ".75rem" }}>
             More Episode Detail

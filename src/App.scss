@@ -21,6 +21,23 @@ html {
 }
 
 /* Custom styles */
+/* Link Buttons */
+.link_button {
+  margin: 1rem 0;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 18px;
+  background-color: var(--green);
+  color: var(--white);
+  font-size: x-large;
+}
+.btn {
+  transition: filter 150ms;
+}
+
+.btn:hover {
+  filter: brightness(1.2);
+}
 
 /* Searchbox */
 ::placeholder {
