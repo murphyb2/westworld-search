@@ -42,7 +42,7 @@ const EpisodeDetail = () => {
         <img src={episode.image.original} alt="" />
         <div className="episodeDetail_body">
           <h2>{episode.summary}</h2>
-          <div>
+          <div style={{ margin: "1.5rem 0" }}>
             Season {episode.season} / Episode {episode.episode}
           </div>
           <div

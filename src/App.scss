@@ -64,7 +64,7 @@ button:focus {
 
 .searchbox_input {
   flex-grow: 1;
-  padding: 1rem 1rem;
+  padding: 1rem 1.75rem;
   font-size: large;
   border: none;
   border-bottom: 1px solid var(--grey);
@@ -185,7 +185,7 @@ button:focus {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 0 0 0 2rem;
+  margin: 0;
 
   h2 {
     margin: 0;
@@ -215,14 +215,6 @@ button:focus {
     width: 90%;
     margin: auto;
   }
-  .episodeDetail_content {
-    display: flex;
-    flex-direction: row;
-    img {
-      max-width: 50%;
-      margin: auto;
-    }
-  }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
@@ -230,6 +222,15 @@ button:focus {
   .container {
     width: 75%;
     margin: auto;
+  }
+  .episodeDetail_content {
+    display: flex;
+    flex-direction: row;
+
+    img {
+      margin: auto 2rem auto 0;
+      max-width: 50%;
+    }
   }
 }
 

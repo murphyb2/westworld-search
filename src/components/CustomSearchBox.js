@@ -8,6 +8,7 @@ const SearchBox = ({
   refine,
   placeholder,
   handleInputChange,
+  inputRef,
 }) => {
   const conditionalInputStyles = !currentRefinement
     ? {
@@ -34,6 +35,7 @@ const SearchBox = ({
           refine(event.currentTarget.value);
         }}
         placeholder={placeholder}
+        ref={inputRef}
       />
       <button
         onClick={(e) => {

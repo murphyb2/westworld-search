@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import algoliasearch from "algoliasearch/lite";
-import { InstantSearch, SearchBox, Stats, Hits } from "react-instantsearch-dom";
+import { InstantSearch } from "react-instantsearch-dom";
 
 import Hit from "./Hit";
 import CustomSearchBox from "./CustomSearchBox";
@@ -13,6 +13,11 @@ const searchClient = algoliasearch(
 
 const SearchView = () => {
   const [hitsPossible, setHitsPossible] = useState(false);
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current.focus();
+  });
 
   return (
     <div className="container">
@@ -23,6 +28,7 @@ const SearchView = () => {
         <CustomSearchBox
           placeholder={"Search for an episode..."}
           handleInputChange={(keyword) => setHitsPossible(!!keyword)}
+          inputRef={inputRef}
         />
 
         {hitsPossible && (
