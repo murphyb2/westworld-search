@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import algoliasearch from "algoliasearch/lite";
 import { InstantSearch } from "react-instantsearch-dom";
+import { CSSTransition } from "react-transition-group";
 
 import Hit from "./Hit";
 import CustomSearchBox from "./CustomSearchBox";
@@ -12,12 +13,14 @@ const searchClient = algoliasearch(
 );
 
 const SearchView = () => {
+  // Autofocus on search input
   const [hitsPossible, setHitsPossible] = useState(false);
   const inputRef = useRef(null);
-
   useEffect(() => {
     inputRef.current.focus();
   });
+
+  const nodeRef = useRef(null);
 
   return (
     <div className="container">
@@ -31,13 +34,25 @@ const SearchView = () => {
           inputRef={inputRef}
         />
 
-        {hitsPossible && (
-          <CustomHits
-            hitComponent={Hit}
-            hitsPossible={hitsPossible}
-            //   hitsPossible={true}
-          />
-        )}
+        <div style={{ overflow: "hidden" }}>
+          <CSSTransition
+            in={hitsPossible}
+            timeout={500}
+            unmountOnExit
+            classNames="hits-list"
+            nodeRef={nodeRef}
+          >
+            <div
+              className="hits"
+              ref={nodeRef}
+              style={{
+                overflow: "hidden",
+              }}
+            >
+              <CustomHits hitComponent={Hit} hitsPossible={hitsPossible} />
+            </div>
+          </CSSTransition>
+        </div>
       </InstantSearch>
     </div>
   );

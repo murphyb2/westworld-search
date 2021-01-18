@@ -84,7 +84,7 @@ button:focus {
   padding: 1rem 1.75rem;
   font-size: large;
   border: none;
-  border-bottom: 1px solid var(--grey);
+  // border-bottom: 1px solid var(--grey);
   border-radius: 25px 0 0 0;
 }
 .searchbox_button {
@@ -178,6 +178,28 @@ button:focus {
   }
 }
 
+/* Hits Box Animation */
+.hits-list-enter {
+  width: 100%;
+  position: relative;
+  transform: translateY(-110%);
+}
+.hits-list-enter-active {
+  width: 100%;
+  transform: translateY(0%);
+  transition: all 250ms ease;
+}
+.hits-list-exit {
+  position: relative;
+}
+.hits-list-exit-active {
+  margin: auto;
+  width: 96%;
+  transform: translateY(-110%);
+  transition: all 250ms ease;
+}
+
+/* Header */
 .title_display {
   font-family: "obviously", sans-serif;
   color: var(--white);
