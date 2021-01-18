@@ -1,6 +1,6 @@
 import React from "react";
 import { Redirect, Link } from "react-router-dom";
-import plusIcon from "../assets/plus.svg";
+import { ReactComponent as PlusIcon } from "../assets/plus.svg";
 import { useEpisode } from "../context/EpisodeContext";
 
 const EpisodeDetail = () => {
@@ -64,7 +64,7 @@ const EpisodeDetail = () => {
           <h2 style={{ margin: "auto 0", paddingRight: ".75rem" }}>
             More Episode Detail
           </h2>
-          <img src={plusIcon} alt="" />
+          <PlusIcon />
         </button>
       </a>
     </div>
