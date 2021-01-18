@@ -15,14 +15,14 @@ const Hit = ({ hit }) => {
         <div className="hit_content">
           <div>
             <h3 className="hit_content_title">
-              <Highlight hit={hit} tagName="strong" attribute={"name"} />
+              <Highlight hit={hit} tagName="mark" attribute={"name"} />
             </h3>
             <p>
               S{hit.season}/E{hit.episode}
             </p>
           </div>
           <div className="hit_body">
-            <Highlight hit={hit} tagName="strong" attribute="summary" />
+            <Highlight hit={hit} tagName="mark" attribute="summary" />
           </div>
         </div>
       </div>

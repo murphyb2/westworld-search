@@ -116,6 +116,10 @@ button:focus {
   border-radius: 0 25px 0 0;
 }
 
+/* Stats */
+.ais-stats {
+  padding: 0 0.5rem;
+}
 /* Hits */
 .hits_container {
   display: flex;
@@ -170,17 +174,22 @@ button:focus {
   font-weight: 700;
   color: var(--green);
   span .ais-Highlight-highlighted {
-    color: var(--red);
+    color: var(--white);
     font-weight: 700;
+    font-style: italic;
+    background-color: var(--red);
+    padding: 0 4px 0 2px;
   }
 }
 
 .hit_body {
   margin: 0;
-  p {
-    margin: 0;
-    padding: 0;
-    color: var(--grey);
+  span .ais-Highlight-highlighted {
+    color: var(--white);
+    font-weight: 700;
+    font-style: italic;
+    background-color: var(--red);
+    padding: 0 4px 0 2px;
   }
 }
 
