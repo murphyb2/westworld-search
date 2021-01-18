@@ -117,7 +117,7 @@ button:focus {
 }
 
 /* Stats */
-.ais-stats {
+.ais-Stats {
   padding: 0 0.5rem;
 }
 /* Hits */
@@ -172,23 +172,25 @@ button:focus {
 .hit_content_title {
   margin: 0;
   font-weight: 700;
+  font-size: x-large;
   color: var(--green);
   span .ais-Highlight-highlighted {
     color: var(--white);
     font-weight: 700;
     font-style: italic;
-    background-color: var(--red);
+    background-color: var(--grey);
     padding: 0 4px 0 2px;
   }
 }
 
 .hit_body {
   margin: 0;
+  font-size: large;
   span .ais-Highlight-highlighted {
     color: var(--white);
     font-weight: 700;
     font-style: italic;
-    background-color: var(--red);
+    background-color: var(--grey);
     padding: 0 4px 0 2px;
   }
 }
