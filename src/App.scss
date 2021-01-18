@@ -90,7 +90,13 @@ button:focus {
   border: none;
   border-radius: 0 0 25px 25px;
   max-height: 66vh;
-  overflow-y: scroll;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  background: var(--grey);
+}
+.simplebar-scrollbar:before {
+  background: var(--grey);
 }
 
 .hit_container {
