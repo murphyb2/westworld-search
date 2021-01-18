@@ -20,46 +20,6 @@ html {
   background-color: var(--sand);
 }
 
-/* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
-  .container {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-  .container {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  .container {
-    width: 90%;
-    margin: auto;
-  }
-}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  .container {
-    width: 66%;
-    margin: auto;
-  }
-}
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  .container {
-    width: 66%;
-    margin: auto;
-  }
-}
-
 /* Custom styles */
 
 /* Searchbox */
@@ -200,4 +160,83 @@ button:focus {
   color: var(--white);
   margin: auto auto auto 0;
   letter-spacing: 0.2rem;
+}
+
+/* Episode Detail */
+
+.episodeDetail_title {
+  font-size: 3rem;
+  color: var(--green);
+  margin: 0;
+  margin-bottom: 0.5rem;
+}
+
+.episodeDetail_content {
+  display: flex;
+  flex-direction: column;
+  color: var(--grey);
+  img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+.episodeDetail_body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 0 0 0 2rem;
+
+  h2 {
+    margin: 0;
+  }
+}
+
+/**** Responsive sizes ****/
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
+  .episodeDetail_content {
+    display: flex;
+    flex-direction: row;
+    img {
+      max-width: 50%;
+      margin: auto;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .container {
+    width: 75%;
+    margin: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .container {
+    width: 75%;
+    margin: auto;
+  }
 }

@@ -3,6 +3,9 @@
 $defaultSans: mr-eaves-modern, sans-serif;
 $defaultWeight: 400;
 
+* {
+  font-family: $defaultSans;
+}
 html {
   font-family: $defaultSans;
   font-weight: $defaultWeight;
@@ -17,4 +20,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   margin: 0;
+}
+
+button {
+  cursor: pointer;
 }
