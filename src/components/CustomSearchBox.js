@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { connectSearchBox } from "react-instantsearch-dom";
 
 import searchIcon from "../assets/search.svg";
@@ -12,24 +12,10 @@ const SearchBox = ({
   handleInputChange,
   inputRef,
 }) => {
-  const [inputStyles, setInputStyles] = useState("searchbox_input_unrefined");
-  const [inputBtnStyles, setInputBtnStyles] = useState(
-    "searchbox_button_unrefined"
-  );
-  useEffect(() => {
-    !currentRefinement
-      ? setInputStyles("searchbox_input_unrefined")
-      : setInputStyles("searchbox_input_refined");
-
-    !currentRefinement
-      ? setInputBtnStyles("searchbox_button_unrefined")
-      : setInputBtnStyles("searchbox_button_refined");
-  }, [currentRefinement]);
-
   return (
     <form noValidate action="" role="search" className="searchbox">
       <input
-        className={`searchbox_input ${inputStyles}`}
+        className="searchbox_input"
         type="search"
         value={currentRefinement}
         onChange={(event) => {
@@ -45,7 +31,7 @@ const SearchBox = ({
           e.preventDefault();
           refine("");
         }}
-        className={`searchbox_button ${inputBtnStyles}`}
+        className="searchbox_button"
       >
         <div
           style={{

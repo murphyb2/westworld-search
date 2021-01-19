@@ -44,6 +44,8 @@ button:focus {
   margin-right: -25px; // fix border radius issues
   font-size: large;
   border: none;
+  border-radius: 25px;
+  z-index: 1;
 }
 .searchbox_input_refined {
   border-top-left-radius: 25px;
@@ -61,15 +63,7 @@ button:focus {
 .searchbox_button {
   background-color: var(--grey);
   border: none;
-}
-
-.searchbox_button_refined {
-  border-top-left-radius: 0;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.searchbox_button_unrefined {
+  z-index: 2;
   border-top-left-radius: 0;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;

@@ -33,8 +33,12 @@ const SearchView = () => {
           handleInputChange={(keyword) => setHitsPossible(!!keyword)}
           inputRef={inputRef}
         />
-
-        <div style={{ overflow: "hidden" }}>
+        <div
+          style={{
+            overflow: "hidden",
+            marginTop: "-25px",
+          }}
+        >
           <CSSTransition
             in={hitsPossible}
             timeout={500}
@@ -46,7 +50,10 @@ const SearchView = () => {
               className="hits"
               ref={nodeRef}
               style={{
-                overflow: "hidden",
+                backgroundColor: "white",
+                paddingTop: "25px",
+                borderBottomLeftRadius: "25px",
+                borderBottomRightRadius: "25px",
               }}
             >
               <CustomHits hitComponent={Hit} hitsPossible={hitsPossible} />
