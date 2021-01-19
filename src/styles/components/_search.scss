@@ -45,12 +45,34 @@ button:focus {
   font-size: large;
   border: none;
 }
+.searchbox_input_refined {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.searchbox_input_unrefined {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 25px;
+}
+
 .searchbox_button {
   background-color: var(--grey);
   border: none;
+}
+
+.searchbox_button_refined {
   border-top-left-radius: 0;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.searchbox_button_unrefined {
+  border-top-left-radius: 0;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
   border-bottom-left-radius: 0;
 }
 
