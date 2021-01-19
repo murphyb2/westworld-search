@@ -15,10 +15,14 @@ const SearchBox = ({
     ? {
         borderTopLeftRadius: "25px",
         borderBottomLeftRadius: "25px",
+        borderBottomRightRadius: "0",
+        borderTopRightRadius: "0",
       }
     : {
         borderTopLeftRadius: "25px",
         borderBottomLeftRadius: "0",
+        borderBottomRightRadius: "0",
+        borderTopRightRadius: "0",
       };
   const conditionalBtnStyles = !currentRefinement
     ? {
