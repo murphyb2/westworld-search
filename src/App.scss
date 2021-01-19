@@ -231,7 +231,6 @@ button:focus {
   flex-direction: column;
   justify-content: space-between;
   margin: 0;
-  max-width: 50%;
 
   h2 {
     margin: 0;
@@ -277,6 +276,9 @@ button:focus {
       margin: auto 2rem auto 0;
       max-width: 50%;
     }
+  }
+  .episodeDetail_body {
+    max-width: 45%;
   }
 }
 
