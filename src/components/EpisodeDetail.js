@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, Link } from "react-router-dom";
 import { ReactComponent as PlusIcon } from "../assets/plus.svg";
 import { useEpisode } from "../context/EpisodeContext";
+import ImageLoad from "./ImageLoad";
 
 const EpisodeDetail = () => {
   const episode = useEpisode();
@@ -29,7 +30,12 @@ const EpisodeDetail = () => {
       </Link>
       <h1 className="episodeDetail_title">{episode.name}</h1>
       <div className="episodeDetail_content">
-        <img src={episode.image.original} alt="" />
+        <ImageLoad
+          src={episode.image.original}
+          placeholder={episode.image.medium}
+          alt=""
+        />
+        {/* <img src={episode.image.original} alt="" /> */}
         <div className="episodeDetail_body">
           <h2>{episode.summary}</h2>
           <div style={{ margin: "1.5rem 0" }}>
