@@ -37,6 +37,7 @@ const SearchView = () => {
           style={{
             overflow: "hidden",
             marginTop: "-25px",
+            border: "none",
           }}
         >
           <CSSTransition
@@ -50,6 +51,7 @@ const SearchView = () => {
               className="hits"
               ref={nodeRef}
               style={{
+                border: "none",
                 backgroundColor: "white",
                 paddingTop: "25px",
                 borderBottomLeftRadius: "25px",
