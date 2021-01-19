@@ -41,6 +41,7 @@ button:focus {
 .searchbox_input {
   flex-grow: 1;
   padding: 1rem 1.75rem;
+  margin-right: -25px; // fix border radius issues
   font-size: large;
   border: none;
 }
