@@ -13,16 +13,18 @@ const SearchBox = ({
 }) => {
   const conditionalInputStyles = !currentRefinement
     ? {
-        borderBottom: "none",
-        borderRadius: "none",
-        borderBottomLeftRadius: "25px",
+        borderRadius: "25px 0 0 25px",
       }
-    : {};
+    : {
+        borderRadius: "25px 0 0 0",
+      };
   const conditionalBtnStyles = !currentRefinement
     ? {
         borderBottomRightRadius: "25px",
       }
-    : {};
+    : {
+        borderBottomRightRadius: "0",
+      };
 
   return (
     <form noValidate action="" role="search" className="searchbox">
@@ -62,7 +64,7 @@ const SearchBox = ({
             />
           ) : (
             <img
-              style={{ width: "100%", height: "100%" }}
+              style={{ width: "100%", height: "auto" }}
               src={searchIcon}
               alt=""
             />
