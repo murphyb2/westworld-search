@@ -58,7 +58,7 @@ const SearchBox = ({
           {isSearchStalled ? (
             <img
               className="loader"
-              style={{ color: "white", width: "100%", height: "100%" }}
+              style={{ color: "white", width: "100%", height: "" }}
               src={spinner}
               alt=""
             />
