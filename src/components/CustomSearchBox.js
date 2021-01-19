@@ -13,10 +13,12 @@ const SearchBox = ({
 }) => {
   const conditionalInputStyles = !currentRefinement
     ? {
-        borderRadius: "25px 0 0 25px",
+        borderTopLeftRadius: "25px",
+        borderBottomLeftRadius: "25px",
       }
     : {
-        borderRadius: "25px 0 0 0",
+        borderTopLeftRadius: "25px",
+        borderBottomLeftRadius: "0",
       };
   const conditionalBtnStyles = !currentRefinement
     ? {
