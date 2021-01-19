@@ -1,6 +1,7 @@
 import { connectSearchBox } from "react-instantsearch-dom";
 
 import searchIcon from "../assets/search.svg";
+import spinner from "../assets/spinner.svg";
 
 const SearchBox = ({
   currentRefinement,
@@ -37,6 +38,7 @@ const SearchBox = ({
         placeholder={placeholder}
         ref={inputRef}
       />
+
       <button
         onClick={(e) => {
           e.preventDefault();
@@ -51,14 +53,22 @@ const SearchBox = ({
             margin: "auto",
           }}
         >
-          <img
-            style={{ width: "100%", height: "100%" }}
-            src={searchIcon}
-            alt=""
-          />
+          {isSearchStalled ? (
+            <img
+              className="loader"
+              style={{ color: "white", width: "100%", height: "100%" }}
+              src={spinner}
+              alt=""
+            />
+          ) : (
+            <img
+              style={{ width: "100%", height: "100%" }}
+              src={searchIcon}
+              alt=""
+            />
+          )}
         </div>
       </button>
-      {isSearchStalled ? "My search is stalled" : ""}
     </form>
   );
 };

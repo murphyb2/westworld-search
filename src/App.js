@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./styles/styles.scss";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import EpisodeProvider from "./context/EpisodeContext";

@@ -18,10 +18,7 @@ const ImageLoad = React.memo(({ src, placeholder, alt = "" }) => {
     <img
       src={currentSrc}
       style={{
-        // height: loading ? "100%" : "auto",
         width: loading ? "100%" : "auto",
-        // opacity: loading ? 0.5 : 1,
-        // transition: "opacity .75s linear",
         filter: loading ? "blur(20px)" : "none",
         transition: loading ? "none" : "filter 0.3s ease-out",
       }}
