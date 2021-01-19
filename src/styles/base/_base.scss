@@ -14,7 +14,11 @@ $defaultWeight: 400;
 
 * {
   font-family: $defaultSans;
-  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 html,
@@ -23,6 +27,7 @@ body {
   width: 100vw;
 }
 html {
+  box-sizing: border-box;
   background-color: var(--sand);
   font-family: $defaultSans;
   font-weight: $defaultWeight;
