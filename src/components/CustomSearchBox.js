@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connectSearchBox } from "react-instantsearch-dom";
 
 import searchIcon from "../assets/search.svg";
@@ -12,6 +12,9 @@ const SearchBox = ({
   handleInputChange,
   inputRef,
 }) => {
+  useEffect(() => {
+    handleInputChange(currentRefinement);
+  }, [currentRefinement, handleInputChange]);
   return (
     <form noValidate action="" role="search" className="searchbox">
       <input
@@ -19,7 +22,8 @@ const SearchBox = ({
         type="search"
         value={currentRefinement}
         onChange={(event) => {
-          handleInputChange(event.currentTarget.value);
+          // console.log("change", event.currentTarget.value);
+          // handleInputChange(event.currentTarget.value);
           refine(event.currentTarget.value);
         }}
         placeholder={placeholder}
