@@ -81,10 +81,12 @@
 .hits-list-enter {
   width: 100%;
   position: relative;
+  z-index: -1;
   transform: translateY(-110%);
 }
 .hits-list-enter-active {
   width: 100%;
+  z-index: 0;
   transform: translateY(0%);
   transition: all 300ms ease;
 }

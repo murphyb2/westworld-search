@@ -21,7 +21,7 @@ const SearchBox = ({
         className="searchbox_input"
         type="search"
         value={currentRefinement}
-        onChange={(event) => {
+        onChange={event => {
           // console.log("change", event.currentTarget.value);
           // handleInputChange(event.currentTarget.value);
           refine(event.currentTarget.value);
@@ -30,19 +30,14 @@ const SearchBox = ({
         ref={inputRef}
       />
 
-      <button
-        onClick={(e) => {
+      {/* <button
+        onClick={e => {
           e.preventDefault();
           refine("");
         }}
         className="searchbox_button"
       >
-        <div
-          style={{
-            width: "75%",
-            margin: "auto",
-          }}
-        >
+        <div>
           {isSearchStalled ? (
             <img
               className="loader"
@@ -58,7 +53,7 @@ const SearchBox = ({
             />
           )}
         </div>
-      </button>
+      </button> */}
     </form>
   );
 };
